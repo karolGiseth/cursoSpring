@@ -5,6 +5,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.bolsadeideas.springboot.web.app.models.Usuario;
+
 
 
 @Controller 
@@ -16,6 +18,15 @@ public class IndexController {
 		model.addAttribute("titulo","hola Spring con map");
 		return "index";
 		
+	}
+	
+	
+	@RequestMapping("/perfil")
+	public String perfil(Model model) {
+		Usuario usuario= new Usuario();
+		usuario.setNombre("Andres");
+		model.addAttribute("usuario",usuario);
+		return "perfil";
 	}
 	
 	
